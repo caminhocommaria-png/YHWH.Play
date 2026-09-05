@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YHWH.Play — Se não vem do Senhor, de quem viria?</title>
+    <link rel="icon" href="imagens/logo1.jpg">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<!-- Tela de Abertura -->
+<div id="telaAbertura">
+    <video id="videoAbertura" src="midia/apresentacao.mp4" autoplay muted playsinline></video>
+    <div class="caixa-entrada">
+        <img src="imagens/logo1.jpg" alt="Logo YHWH.Play" class="logo">
+        <h1>YHWH.Play</h1>
+        <p>Se não vem do Senhor, de quem viria?</p>
+        <button id="btnEntrar" class="btn-principal">ENTRAR</button>
+    </div>
+</div>
+
+<!-- Conteúdo Principal -->
+<div id="conteudoPrincipal">
+    <header class="cabecalho">
+        <img src="imagens/logo1.jpg" alt="Logo" class="logo-pequeno">
+        <h2>YHWH.Play</h2>
+        <button id="btnSair" class="btn-sair">✕ Sair</button>
+    </header>
+
+    <!-- Planos e Valores -->
+    <section class="planos-secao">
+        <h2 class="titulo-secao">Planos e Valores</h2>
+        <div class="planos-grid">
+            <div class="plano">
+                <h3>Grátis</h3>
+                <div class="preco">R$ 0,00</div>
+                <ul class="lista-beneficios">
+                    <li>Edição básica</li>
+                    <li>Marca d'água inclusa</li>
+                    <li>Até 5 projetos simultâneos</li>
+                    <li>Sem prazo de validade — é para sempre!</li>
+                </ul>
+                <button class="btn-plano" id="btnEscolherGratis">Escolher</button>
+            </div>
+            <div class="plano destaque">
+                <h3>Premium</h3>
+                <div class="preco">R$ 19,90/mês</div>
+                <ul class="lista-beneficios">
+                    <li>Edição completa e avançada</li>
+                    <li>Sem marca d'água</li>
+                    <li>Projetos ilimitados</li>
+                    <li>Alta resolução</li>
+                    <li>Suporte prioritário</li>
+                </ul>
+                <button class="btn-plano destaque" id="btnAssinarPremium">Assinar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ferramentas de Criação -->
+    <section class="ferramentas-secao">
+        <h2 class="titulo-secao">Área de Criação</h2>
+        
+        <div class="abas-ferramentas">
+            <button class="aba-videos ativa">🎥 Editar Vídeos</button>
+            <button class="aba-musicas">🎵 Editar Músicas</button>
+            <button class="aba-letras">✍️ Editar Letras</button>
+            <button class="aba-modelos">📋 Modelos Prontos</button>
+        </div>
+
+        <div class="conteudo-abas">
+            <!-- Aba Vídeos -->
+            <div id="conteudoVideos" class="conteudo-aba">
+                <h3>🎥 Carregar e Editar Vídeo</h3>
+                <input type="file" accept="video/*" id="uploadVideo" class="input-arquivo">
+                <label for="uploadVideo" class="btn-upload">📁 Escolher Vídeo</label>
+                <div class="preview" id="previewVideo">
+                    <p>Arraste um vídeo aqui ou clique acima</p>
+                </div>
+                <div class="botoes-acao">
+                    <button class="btn-acao">✂️ Cortar</button>
+                    <button class="btn-acao">🎨 Filtros</button>
+                    <button class="btn-acao">💾 Salvar</button>
+                </div>
+            </div>
+
+            <!-- Aba Músicas -->
+            <div id="conteudoMusicas" class="conteudo-aba">
+                <h3>🎵 Carregar e Editar Áudio</h3>
+                <input type="file" accept="audio/*" id="uploadMusica" class="input-arquivo">
+                <label for="uploadMusica" class="btn-upload">📁 Escolher Áudio</label>
+                <div class="preview" id="previewMusica">
+                    <p>Arraste um áudio aqui ou clique acima — use sua própria música!</p>
+                </div>
+                <div class="botoes-acao">
+                    <button class="btn-acao">🔊 Volume</button>
+                    <button class="btn-acao">🎵 Efeitos</button>
+                    <button class="btn-acao">💾 Salvar</button>
+                </div>
+            </div>
+
+            <!-- Aba Letras -->
+            <div id="conteudoLetras" class="conteudo-aba">
+                <h3>✍️ Editor de Letras — Compor sua Música</h3>
+                <div class="form-letra">
+                    <label>Título da Música:</label>
+                    <input type="text" id="tituloLetra" placeholder="Digite o título...">
+                    
+                    <label>Autor / Compositor:</label>
+                    <input type="text" id="autorLetra" placeholder="Seu nome...">
+                    
+                    <label>Versículo / Inspiração:</label>
+                    <input type="text" id="inspiracaoLetra" placeholder="Ex: Salmo 23:1">
+                    
+                    <label>Letra da Música:</label>
+                    <textarea id="textoLetra" placeholder="Escreva sua letra aqui..."></textarea>
+                    
+                    <div class="botoes-acao">
+                        <button class="btn-acao" id="btnNovaLetra">📄 Nova Letra</button>
+                        <button class="btn-acao" id="btnSalvarLetra">💾 Salvar Letra</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aba Modelos -->
+            <div id="conteudoModelos" class="conteudo-aba">
+                <h3>📋 Modelos Prontos</h3>
+                <div class="grade-modelos">
+                    <div class="modelo-card">
+                        <img src="imagens/modelo1.jpg" alt="Modelo 1" onerror="this.src='https://via.placeholder.com/200x120/1a73e8/ffffff?text=Modelo+1'">
+                        <h4>Modelo 1 — Anúncio</h4>
+                        <button class="btn-usar-modelo">Usar Modelo</button>
+                    </div>
+                    <div class="modelo-card">
+                        <img src="imagens/modelo2.jpg" alt="Modelo 2" onerror="this.src='https://via.placeholder.com/200x120/0d47a1/ffffff?text=Modelo+2'">
+                        <h4>Modelo 2 — Louvor</h4>
+                        <button class="btn-usar-modelo">Usar Modelo</button>
+                    </div>
+                    <div class="modelo-card">
+                        <img src="imagens/modelo3.jpg" alt="Modelo 3" onerror="this.src='https://via.placeholder.com/200x120/1e40af/ffffff?text=Modelo+3'">
+                        <h4>Modelo 3 — Mensagem</h4>
+                        <button class="btn-usar-modelo">Usar Modelo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+// ===== ELEMENTOS =====
+const telaAbertura = document.getElementById('telaAbertura');
+const conteudoPrincipal = document.getElementById('conteudoPrincipal');
+const btnEntrar = document.getElementById('btnEntrar');
+const btnSair = document.getElementById('btnSair');
+
+// ===== ENTRAR E SAIR =====
+btnEntrar.addEventListener('click', () => {
+    telaAbertura.classList.add('escondida');
+    conteudoPrincipal.classList.add('visivel');
+});
+
+btnSair.addEventListener('click', () => {
+    telaAbertura.classList.remove('escondida');
+    conteudoPrincipal.classList.remove('visivel');
+});
+
+// ===== PLANOS =====
+document.getElementById('btnEscolherGratis').addEventListener('click', () => {
+    alert('✅ Plano Grátis ativado! É para sempre! Bem-vindo ao YHWH.Play! 🎉');
+});
+
+document.getElementById('btnAssinarPremium').addEventListener('click', () => {
+    alert('💳 Redirecionando para pagamento do Plano Premium...');
+});
+
+// ===== NAVEGAÇÃO DAS ABAS =====
+const abaVideos = document.querySelector('.aba-videos');
+const abaMusicas = document.querySelector('.aba-musicas');
+const abaLetras = document.querySelector('.aba-letras');
+const abaModelos = document.querySelector('.aba-modelos');
+
+const conteudoVideos = document.getElementById('conteudoVideos');
+const conteudoMusicas = document.getElementById('conteudoMusicas');
+const conteudoLetras = document.getElementById('conteudoLetras');
+const conteudoModelos = document.getElementById('conteudoModelos');
+
+function mostrarAba(tipoAba) {
+    conteudoVideos.style.display = 'none';
+    conteudoMusicas.style.display = 'none';
+    conteudoLetras.style.display = 'none';
+    conteudoModelos.style.display = 'none';
+
+    abaVideos.classList.remove('ativa');
+    abaMusicas.classList.remove('ativa');
+    abaLetras.classList.remove('ativa');
+    abaModelos.classList.remove('ativa');
+
+    if (tipoAba === 'videos') {
+        conteudoVideos.style.display = 'block';
+        abaVideos.classList.add('ativa');
+    } else if (tipoAba === 'musicas') {
+        conteudoMusicas.style.display = 'block';
+        abaMusicas.classList.add('ativa');
+    } else if (tipoAba === 'letras') {
+        conteudoLetras.style.display = 'block';
+        abaLetras.classList.add('ativa');
+    } else if (tipoAba === 'modelos') {
+        conteudoModelos.style.display = 'block';
+        abaModelos.classList.add('ativa');
+    }
+}
+
+abaVideos.addEventListener('click', () => mostrarAba('videos'));
+abaMusicas.addEventListener('click', () => mostrarAba('musicas'));
+abaLetras.addEventListener('click', () => mostrarAba('letras'));
+abaModelos.addEventListener('click', () => mostrarAba('modelos'));
+
+// ===== EDITOR DE LETRAS =====
+const tituloLetra = document.getElementById('tituloLetra');
+const autorLetra = document.getElementById('autorLetra');
+const inspiracaoLetra = document.getElementById('inspiracaoLetra');
+const textoLetra = document.getElementById('textoLetra');
+
+document.getElementById('btnNovaLetra').addEventListener('click', () => {
+    tituloLetra.value = '';
+    autorLetra.value = '';
+    inspiracaoLetra.value = '';
+    textoLetra.value = '';
+    alert('✅ Área limpa! Pronto para compor uma nova letra! ✍️🎵');
+});
+
+document.getElementById('btnSalvarLetra').addEventListener('click', () => {
+    if (!tituloLetra.value.trim()) {
+        alert('⚠️ Digite um título para salvar!');
+        tituloLetra.focus();
+        return;
+    }
+    const conteudo = `TÍTULO: ${tituloLetra.value}
+AUTOR: ${autorLetra.value || 'Não informado'}
+INSPIRAÇÃO: ${inspiracaoLetra.value || 'Não informada'}
+
+${textoLetra.value}
+
+--- Salvo com YHWH.Play ---`;
+    const blob = new Blob([conteudo], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${tituloLetra.value.replace(/\s+/g, '-')}.txt`;
+    a.click();
+    URL.revokeObjectURL(url);
+    alert(`✅ Letra "${tituloLetra.value}" salva com sucesso! 📄💛`);
+});
+
+// ===== MODELOS =====
+document.querySelectorAll('.btn-usar-modelo').forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        alert(`✅ Modelo ${index + 1} carregado! Pronto para editar! 🎨`);
+    });
+});
+</script>
+
+</body>
+</html>
